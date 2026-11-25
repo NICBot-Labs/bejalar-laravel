@@ -139,28 +139,6 @@ Project telah dilengkapi dengan pengujian Feature Test otomatis (`tests/Feature/
 php artisan test
 ```
 
-**Hasil Uji Coba:**
-```text
-   PASS  Tests\Unit\ExampleTest
-  ✓ that true is true
-
-   PASS  Tests\Feature\ExampleTest
-  ✓ the application returns a successful response
-
-   PASS  Tests\Feature\ProductCrudTest
-  ✓ can display products index page
-  ✓ can search products by name
-  ✓ can display create product page
-  ✓ can store product with valid data
-  ✓ cannot store product with invalid data
-  ✓ can display edit product page
-  ✓ can update product
-  ✓ can delete product
-  ✓ relationship models
-
-  Tests:    11 passed (37 assertions)
-```
-
 ---
 
 ## Struktur Berkas Penting
