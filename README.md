@@ -1,5 +1,4 @@
-#E-Commerce Manajemen Produk (UTS Pemrograman Berbasis Kerangka Kerja)
-
+#E-Commerce Manajemen Produk 
 [![Laravel](https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.3+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
@@ -32,7 +31,7 @@ Berikut adalah dokumentasi video pembelajaran dan demonstrasi proyek dari Pertem
 
 ---
 
-## Fitur Utama Project (Sesuai Soal UTS)
+## Fitur Utama Project 
 
 | No | Komponen Soal UTS | Status | Implementasi & File Terkait |
 |:--:|---|:---:|---|
@@ -47,7 +46,12 @@ Berikut adalah dokumentasi video pembelajaran dan demonstrasi proyek dari Pertem
 
 ---
 
-## Tampilan UI (Astra Brandstore-02 Theme)
+## Tampilan UI 
+* **Tampilan Utama 
+<img width="1823" height="993" alt="image" src="https://github.com/user-attachments/assets/9166d7e6-3000-4603-9e28-b23c03653383" />
+
+* **Tampilan Utama 
+<img width="1823" height="993" alt="image" src="https://github.com/user-attachments/assets/9166d7e6-3000-4603-9e28-b23c03653383" />
 
 
 ## Konsep Blade yang Diterapkan
