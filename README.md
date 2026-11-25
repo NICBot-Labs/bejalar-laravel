@@ -1,4 +1,4 @@
-#E-Commerce Manajemen Produk 
+# E-Commerce Manajemen Produk 
 [![Laravel](https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
 [![PHP](https://img.shields.io/badge/PHP-8.3+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
@@ -49,11 +49,9 @@ Berikut adalah dokumentasi video pembelajaran dan demonstrasi proyek dari Pertem
 ## Tampilan UI 
 **Tampilan Utama** 
 <img width="1823" height="993" alt="image" src="https://github.com/user-attachments/assets/9166d7e6-3000-4603-9e28-b23c03653383" />
-<br>
+
 **Tampilan Tambah Data** 
 <img width="1834" height="989" alt="image" src="https://github.com/user-attachments/assets/e418ec23-6e58-44b6-9130-86de89428504" />
-
-<br>
 **Tampilan Edit Data** 
 <img width="1893" height="962" alt="image" src="https://github.com/user-attachments/assets/c4c9469f-e7a0-40b9-8a5b-9c009b8abf75" />
 
@@ -204,4 +202,4 @@ bejalar-laravel/
 
 ---
 
-© 2026 **M. Niko Nur Cahyono** · Teknik Informatika · Pemrograman Berbasis Kerangka Kerja
+© 2026 **M. Niko Nur Cahyono** · Ilmu Komputer · Pemrograman Berbasis Kerangka Kerja
