@@ -47,12 +47,15 @@ Berikut adalah dokumentasi video pembelajaran dan demonstrasi proyek dari Pertem
 ---
 
 ## Tampilan UI 
-* **Tampilan Utama 
+**Tampilan Utama** 
 <img width="1823" height="993" alt="image" src="https://github.com/user-attachments/assets/9166d7e6-3000-4603-9e28-b23c03653383" />
+<br>
+**Tampilan Tambah Data** 
+<img width="1834" height="989" alt="image" src="https://github.com/user-attachments/assets/e418ec23-6e58-44b6-9130-86de89428504" />
 
-* **Tampilan Utama 
-<img width="1823" height="993" alt="image" src="https://github.com/user-attachments/assets/9166d7e6-3000-4603-9e28-b23c03653383" />
-
+<br>
+**Tampilan Edit Data** 
+<img width="1893" height="962" alt="image" src="https://github.com/user-attachments/assets/c4c9469f-e7a0-40b9-8a5b-9c009b8abf75" />
 
 ## Konsep Blade yang Diterapkan
 
