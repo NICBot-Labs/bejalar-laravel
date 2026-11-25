@@ -9,30 +9,41 @@
 Aplikasi web manajemen katalog produk berbasis **Laravel 13 Blade** dengan relasi kategori dinamis, validasi Form Request, pagination, pencarian real-time, dan desain antarmuka modern
 
 ---
+
+## Identitas Mahasiswa
+
 * **Nama Lengkap:** M. Niko Nur Cahyono
 * **NIM:** 2455201014
 * **Mata Kuliah:** Pemrograman Berbasis Kerangka Kerja (PBKK)
-* **Semester / Pertemuan:** Semester 5 · Pertemuan 8 (Ujian Tengah Semester)
-* **Tautan Video Demo YouTube:** [Tonton Demonstrasi Project di YouTube]
+* **Semester / Kelas:** Semester 5 · Teknik Informatika
 
-Pertemuan 3 dan 4  Migrasi Databse, seder, dan faktori, Eloqunt ORM dan Model Laravel : https://youtu.be/nnzRC3HOd4k?si=DvY3N8bSBpUdpxkp
+---
 
-Pertemuan 2 rounting kontroller dan reques : https://youtu.be/wA77bPqGU_4?si=-yNNIXqQvb97k64r
-Pertemua 1 basic laravel: https://youtu.be/QGJXPrmIoBM?si=L1XaVdSnxa3MPGo4
+## Dokumentasi Video Praktikum & Demo Proyek
 
+Berikut adalah dokumentasi video pembelajaran dan demonstrasi proyek dari Pertemuan 1 hingga UTS:
 
-##Fitur Utama Project (Sesuai Soal UTS)
+| Pertemuan | Topik Pembelajaran | Tautan Video YouTube |
+|:---:|---|:---:|
+| **UTS (P-8)** | **Demonstrasi CRUD Produk, Relasi Kategori & Blade** | [Tonton Video Demo UTS](https://youtube.com) *(Tempelkan link UTS Anda di sini)* |
+| **P-3 & P-4** | Migrasi Database, Seeder, Factory, Eloquent ORM & Model Laravel | [Tonton Video (YouTube)](https://youtu.be/nnzRC3HOd4k?si=DvY3N8bSBpUdpxkp) |
+| **P-2** | Routing, Controller, dan Request Handling | [Tonton Video (YouTube)](https://youtu.be/wA77bPqGU_4?si=-yNNIXqQvb97k64r) |
+| **P-1** | Pengenalan & Konsep Dasar Laravel Framework | [Tonton Video (YouTube)](https://youtu.be/QGJXPrmIoBM?si=L1XaVdSnxa3MPGo4) |
+
+---
+
+## Fitur Utama Project (Sesuai Soal UTS)
 
 | No | Komponen Soal UTS | Status | Implementasi & File Terkait |
 |:--:|---|:---:|---|
-| 1 | **Relasi Eloquent Model** | ✅ Selesai | `Category hasMany Product` dan `Product belongsTo Category`. Kolom `category_id` dan Seeder 5 kategori (`CategorySeeder`, `ProductSeeder`). |
-| 2 | **Layout Utama (Master Layout)** | ✅ Selesai | [`resources/views/layouts/app.blade.php`](resources/views/layouts/app.blade.php) memuat Navbar, footer, `@yield('content')`, dan penampung flash message `session('success')`. |
-| 3 | **Daftar Produk (`/produk`)** | ✅ Selesai | [`resources/views/products/index.blade.php`](resources/views/products/index.blade.php) menampilkan tabel Nama, Kategori, Harga (format Rupiah), Stok, Eager Loading (`Product::with('category')`), dan pagination Bootstrap 5. |
-| 4 | **Tambah Produk** | ✅ Selesai | [`resources/views/products/create.blade.php`](resources/views/products/create.blade.php) dengan dropdown kategori dinamis, proteksi `@csrf`, validasi Form Request terpisah ([`ProductRequest.php`](app/Http/Requests/ProductRequest.php)), penanganan `@error`, dan `old()`. |
-| 5 | **Edit Produk** | ✅ Selesai | [`resources/views/products/edit.blade.php`](resources/views/products/edit.blade.php) menampilkan data lama `old('field', $produk->field)`, method spoofing `@method('PUT')`, dan validasi yang sama. |
-| 6 | **Hapus Produk** | ✅ Selesai | Form tombol hapus `@method('DELETE')` dengan dialog konfirmasi JavaScript `confirm()`, Soft Deletes, dan kembali dengan pesan sukses. |
-| 7 | **Controller Terpisah** | ✅ Selesai | Menggunakan [`ProductWebController.php`](app/Http/Controllers/ProductWebController.php) di `routes/web.php`, terpisah dari API Controller. |
-| 8 | **Fitur Tambahan (Pencarian & Filter)** | ✅ Selesai | Pencarian berdasarkan kata kunci nama/deskripsi produk dan filter cepat kategori dinamis. |
+| 1 | **Relasi Eloquent Model** | Selesai | `Category hasMany Product` dan `Product belongsTo Category`. Kolom `category_id` dan Seeder 5 kategori (`CategorySeeder`, `ProductSeeder`). |
+| 2 | **Layout Utama (Master Layout)** | Selesai | [`resources/views/layouts/app.blade.php`](resources/views/layouts/app.blade.php) memuat Navbar, footer, `@yield('content')`, dan penampung flash message `session('success')`. |
+| 3 | **Daftar Produk (`/produk`)** | Selesai | [`resources/views/products/index.blade.php`](resources/views/products/index.blade.php) menampilkan tabel Nama, Kategori, Harga (format Rupiah), Stok, Eager Loading (`Product::with('category')`), dan pagination Bootstrap 5. |
+| 4 | **Tambah Produk** | Selesai | [`resources/views/products/create.blade.php`](resources/views/products/create.blade.php) dengan dropdown kategori dinamis, proteksi `@csrf`, validasi Form Request terpisah ([`ProductRequest.php`](app/Http/Requests/ProductRequest.php)), penanganan `@error`, dan `old()`. |
+| 5 | **Edit Produk** | Selesai | [`resources/views/products/edit.blade.php`](resources/views/products/edit.blade.php) menampilkan data lama `old('field', $produk->field)`, method spoofing `@method('PUT')`, dan validasi yang sama. |
+| 6 | **Hapus Produk** | Selesai | Form tombol hapus `@method('DELETE')` dengan dialog konfirmasi JavaScript `confirm()`, Soft Deletes, dan kembali dengan pesan sukses. |
+| 7 | **Controller Terpisah** | Selesai | Menggunakan [`ProductWebController.php`](app/Http/Controllers/ProductWebController.php) di `routes/web.php`, terpisah dari API Controller. |
+| 8 | **Fitur Tambahan (Pencarian & Filter)** | Selesai | Pencarian berdasarkan kata kunci nama/deskripsi produk dan filter cepat kategori dinamis. |
 
 ---
 
