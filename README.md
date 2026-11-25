@@ -1,25 +1,27 @@
-# 📦 E-Commerce Manajemen Produk (UTS Pemrograman Berbasis Kerangka Kerja)
+#E-Commerce Manajemen Produk (UTS Pemrograman Berbasis Kerangka Kerja)
 
-[![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
-[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![Laravel](https://img.shields.io/badge/Laravel-13.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.3+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
 [![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
 [![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
 [![Tests](https://img.shields.io/badge/Tests-11%20Passed%20(37%20assertions)-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white)](#-pengujian-otomatis-testing)
 
-Aplikasi web manajemen katalog produk berbasis **Laravel 11 Blade** dengan relasi kategori dinamis, validasi Form Request, pagination, pencarian real-time, dan desain antarmuka modern terinspirasi template e-commerce **Astra Brandstore-02 (DNK Store)**.
+Aplikasi web manajemen katalog produk berbasis **Laravel 13 Blade** dengan relasi kategori dinamis, validasi Form Request, pagination, pencarian real-time, dan desain antarmuka modern
 
 ---
-
-## 👨‍💻 Identitas Mahasiswa
 * **Nama Lengkap:** M. Niko Nur Cahyono
 * **NIM:** 2455201014
 * **Mata Kuliah:** Pemrograman Berbasis Kerangka Kerja (PBKK)
 * **Semester / Pertemuan:** Semester 5 · Pertemuan 8 (Ujian Tengah Semester)
-* **Tautan Video Demo YouTube:** [Tonton Demonstrasi Project di YouTube](https://youtube.com) *(Masukkan tautan video YouTube Anda di sini)*
+* **Tautan Video Demo YouTube:** [Tonton Demonstrasi Project di YouTube]
 
----
+Pertemuan 3 dan 4  Migrasi Databse, seder, dan faktori, Eloqunt ORM dan Model Laravel : https://youtu.be/nnzRC3HOd4k?si=DvY3N8bSBpUdpxkp
 
-## 🚀 Fitur Utama Project (Sesuai Soal UTS)
+Pertemuan 2 rounting kontroller dan reques : https://youtu.be/wA77bPqGU_4?si=-yNNIXqQvb97k64r
+Pertemua 1 basic laravel: https://youtu.be/QGJXPrmIoBM?si=L1XaVdSnxa3MPGo4
+
+
+##Fitur Utama Project (Sesuai Soal UTS)
 
 | No | Komponen Soal UTS | Status | Implementasi & File Terkait |
 |:--:|---|:---:|---|
@@ -34,15 +36,10 @@ Aplikasi web manajemen katalog produk berbasis **Laravel 11 Blade** dengan relas
 
 ---
 
-## 🎨 Tampilan UI (Astra Brandstore-02 Theme)
-Antarmuka didesain mengikuti estetika **Brandstore DNK**:
-- **Tipografi:** Google Fonts *Montserrat* (Heading, Logo, Button) dan *Lato* (Teks Body & Tabel).
-- **Warna Identitas:** Biru elektrik Brandstore (`#0084d6`), charcoal black (`#111111`), dan latar bersih (`#f5f7f9`).
-- **Komponen:** Top announcement banner, card featured products dengan rating bintang emas (`★★★★★`), tabel data interaktif dengan badge kategori, dan footer multi-kolom informatif.
+## Tampilan UI (Astra Brandstore-02 Theme)
 
----
 
-## 💡 Konsep Blade yang Diterapkan
+## Konsep Blade yang Diterapkan
 
 Proyek ini menerapkan konsep templating Blade secara komprehensif:
 
@@ -58,7 +55,7 @@ Proyek ini menerapkan konsep templating Blade secara komprehensif:
 
 ---
 
-## 🔄 Alur Arsitektur Request (MVC Flow)
+## Alur Arsitektur Request (MVC Flow)
 
 ```mermaid
 flowchart TD
@@ -75,7 +72,7 @@ flowchart TD
 
 ---
 
-## 🛠️ Panduan Instalasi & Menjalankan Proyek
+## Panduan Instalasi & Menjalankan Proyek
 
 ### 1. Prasyarat Sistem
 * PHP >= 8.2
@@ -114,11 +111,11 @@ php artisan serve
 ```
 
 Akses aplikasi di browser melalui:  
-👉 **`http://localhost:8000/produk`** (atau via domain Laragon: `http://bejalar-laravel.test/produk`)
+**`http://localhost:8000/produk`** (atau via domain Laragon: `http://bejalar-laravel.test/produk`)
 
 ---
 
-## 🧪 Pengujian Otomatis (Testing)
+## Pengujian Otomatis (Testing)
 
 Project telah dilengkapi dengan pengujian Feature Test otomatis (`tests/Feature/ProductCrudTest.php`) yang menguji seluruh skenario CRUD, relasi database, pencarian, dan validasi:
 
@@ -150,7 +147,7 @@ php artisan test
 
 ---
 
-## 📁 Struktur Berkas Penting
+## Struktur Berkas Penting
 
 ```text
 bejalar-laravel/
