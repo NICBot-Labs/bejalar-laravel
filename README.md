@@ -24,7 +24,7 @@ Berikut adalah dokumentasi video pembelajaran dan demonstrasi proyek dari Pertem
 
 | Pertemuan | Topik Pembelajaran | Tautan Video YouTube |
 |:---:|---|:---:|
-| **UTS (P-8)** | **Demonstrasi CRUD Produk, Relasi Kategori & Blade** | None|
+| **UTS (P-8)** | **Demonstrasi CRUD Produk, Relasi Kategori & Blade** | None (Face to Face)|
 | **P-3 & P-4** | Migrasi Database, Seeder, Factory, Eloquent ORM & Model Laravel | [Tonton Video (YouTube)](https://youtu.be/nnzRC3HOd4k?si=DvY3N8bSBpUdpxkp) |
 | **P-2** | Routing, Controller, dan Request Handling | [Tonton Video (YouTube)](https://youtu.be/wA77bPqGU_4?si=-yNNIXqQvb97k64r) |
 | **P-1** | Pengenalan & Konsep Dasar Laravel Framework | [Tonton Video (YouTube)](https://youtu.be/QGJXPrmIoBM?si=L1XaVdSnxa3MPGo4) |
