@@ -8,7 +8,6 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class Product extends Model
 {
-    //
     use HasFactory, SoftDeletes;
 
     protected $fillable = [
@@ -18,4 +17,12 @@ class Product extends Model
         'stok',
         'category_id',
     ];
+
+    /**
+     * Product belongsTo Category
+     */
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

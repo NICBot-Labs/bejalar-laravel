@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use App\Models\Product;
+use App\Http\Resources\ProductResource;
 
 class ProductsController extends Controller
 {
@@ -13,14 +14,19 @@ class ProductsController extends Controller
      */
     public function index(Request $request)
     {
-        $query = Product::latest();
+        $sort = in_array($request->sort, ['nama', 'harga', 'stok'])
+            ? $request->sort : 'created_at';
+        $order = $request->order === 'asc' ? 'asc' : 'desc';
+        $perPage = min($request->integer('per_page', 10), 50);
 
-        if ($request->has('search')) {
-            $keyword = $request->query('search');
-            $query->where('nama', 'like', '%' . $keyword . '%');
-        }
+        $products = Product::query()
+            ->when($request->search, fn($q, $v) => $q->where('nama', 'like', "%$v%"))
+            ->when($request->min_harga, fn($q, $v) => $q->where('harga', '>=', $v))
+            ->when($request->max_harga, fn($q, $v) => $q->where('harga', '<=', $v))
+            ->orderBy($sort, $order)
+            ->paginate($perPage);
 
-        return response()->json($query->get());
+        return ProductResource::collection($products);
     }
 
     public function trashed()
@@ -59,6 +65,11 @@ class ProductsController extends Controller
         //     'message' => 'Produk berhasil diterima',
         //     'data' => $data
         // ], 201);
+        $data = $request->validate([
+            'nama' => 'required|string|max:255',
+            'harga' => 'required|integer|min:0',
+            'stok' => 'integer|min:0',
+        ]);
 
         $product = Product::create($request->all());
         return response()->json($product, 201);
