@@ -1,58 +1,192 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 📦 E-Commerce Manajemen Produk (UTS Pemrograman Berbasis Kerangka Kerja)
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+[![Laravel](https://img.shields.io/badge/Laravel-11.x-FF2D20?style=for-the-badge&logo=laravel&logoColor=white)](https://laravel.com)
+[![PHP](https://img.shields.io/badge/PHP-8.2+-777BB4?style=for-the-badge&logo=php&logoColor=white)](https://php.net)
+[![Bootstrap](https://img.shields.io/badge/Bootstrap-5.3-7952B3?style=for-the-badge&logo=bootstrap&logoColor=white)](https://getbootstrap.com)
+[![MySQL](https://img.shields.io/badge/MySQL-8.0-4479A1?style=for-the-badge&logo=mysql&logoColor=white)](https://mysql.com)
+[![Tests](https://img.shields.io/badge/Tests-11%20Passed%20(37%20assertions)-brightgreen?style=for-the-badge&logo=checkmarx&logoColor=white)](#-pengujian-otomatis-testing)
 
-## About Laravel
+Aplikasi web manajemen katalog produk berbasis **Laravel 11 Blade** dengan relasi kategori dinamis, validasi Form Request, pagination, pencarian real-time, dan desain antarmuka modern terinspirasi template e-commerce **Astra Brandstore-02 (DNK Store)**.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+---
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 👨‍💻 Identitas Mahasiswa
+* **Nama Lengkap:** M. Niko Nur Cahyono
+* **NIM:** 2455201014
+* **Mata Kuliah:** Pemrograman Berbasis Kerangka Kerja (PBKK)
+* **Semester / Pertemuan:** Semester 5 · Pertemuan 8 (Ujian Tengah Semester)
+* **Tautan Video Demo YouTube:** [Tonton Demonstrasi Project di YouTube](https://youtube.com) *(Masukkan tautan video YouTube Anda di sini)*
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+---
 
-## Learning Laravel
+## 🚀 Fitur Utama Project (Sesuai Soal UTS)
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+| No | Komponen Soal UTS | Status | Implementasi & File Terkait |
+|:--:|---|:---:|---|
+| 1 | **Relasi Eloquent Model** | ✅ Selesai | `Category hasMany Product` dan `Product belongsTo Category`. Kolom `category_id` dan Seeder 5 kategori (`CategorySeeder`, `ProductSeeder`). |
+| 2 | **Layout Utama (Master Layout)** | ✅ Selesai | [`resources/views/layouts/app.blade.php`](resources/views/layouts/app.blade.php) memuat Navbar, footer, `@yield('content')`, dan penampung flash message `session('success')`. |
+| 3 | **Daftar Produk (`/produk`)** | ✅ Selesai | [`resources/views/products/index.blade.php`](resources/views/products/index.blade.php) menampilkan tabel Nama, Kategori, Harga (format Rupiah), Stok, Eager Loading (`Product::with('category')`), dan pagination Bootstrap 5. |
+| 4 | **Tambah Produk** | ✅ Selesai | [`resources/views/products/create.blade.php`](resources/views/products/create.blade.php) dengan dropdown kategori dinamis, proteksi `@csrf`, validasi Form Request terpisah ([`ProductRequest.php`](app/Http/Requests/ProductRequest.php)), penanganan `@error`, dan `old()`. |
+| 5 | **Edit Produk** | ✅ Selesai | [`resources/views/products/edit.blade.php`](resources/views/products/edit.blade.php) menampilkan data lama `old('field', $produk->field)`, method spoofing `@method('PUT')`, dan validasi yang sama. |
+| 6 | **Hapus Produk** | ✅ Selesai | Form tombol hapus `@method('DELETE')` dengan dialog konfirmasi JavaScript `confirm()`, Soft Deletes, dan kembali dengan pesan sukses. |
+| 7 | **Controller Terpisah** | ✅ Selesai | Menggunakan [`ProductWebController.php`](app/Http/Controllers/ProductWebController.php) di `routes/web.php`, terpisah dari API Controller. |
+| 8 | **Fitur Tambahan (Pencarian & Filter)** | ✅ Selesai | Pencarian berdasarkan kata kunci nama/deskripsi produk dan filter cepat kategori dinamis. |
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+## 🎨 Tampilan UI (Astra Brandstore-02 Theme)
+Antarmuka didesain mengikuti estetika **Brandstore DNK**:
+- **Tipografi:** Google Fonts *Montserrat* (Heading, Logo, Button) dan *Lato* (Teks Body & Tabel).
+- **Warna Identitas:** Biru elektrik Brandstore (`#0084d6`), charcoal black (`#111111`), dan latar bersih (`#f5f7f9`).
+- **Komponen:** Top announcement banner, card featured products dengan rating bintang emas (`★★★★★`), tabel data interaktif dengan badge kategori, dan footer multi-kolom informatif.
 
-## Agentic Development
+---
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+## 💡 Konsep Blade yang Diterapkan
 
-```bash
-composer require laravel/boost --dev
+Proyek ini menerapkan konsep templating Blade secara komprehensif:
 
-php artisan boost:install
+1. **`@extends('layouts.app')`:** Mewarisi struktur HTML master (Navbar, CSS, Footer) ke halaman anak.
+2. **`@section('content')` & `@yield('content')`:** Wadah injeksi konten unik dari view anak ke layout induk.
+3. **`@forelse ... @empty ... @endforelse`:** Looping data produk sekaligus menampilkan pesan informatif jika data kosong atau pencarian nihil.
+4. **`@csrf`:** Proteksi keamanan Cross-Site Request Forgery pada setiap form HTTP.
+5. **`@method('PUT')` & `@method('DELETE')`:** *Method Spoofing* agar HTML form dapat mengeksekusi rute standar RESTful API.
+6. **`old('nama')`:** Mempertahankan isian user saat validasi form gagal agar tidak perlu mengetik ulang.
+7. **`@error('nama') ... @enderror`:** Menampilkan umpan balik pesan validasi merah secara spesifik di bawah input.
+8. **`session('success')`:** Menampilkan notifikasi alert hijau saat operasi Create, Update, atau Delete berhasil.
+9. **`$products->links()`:** Merender tombol navigasi pagination secara otomatis berbasis Bootstrap 5.
+
+---
+
+## 🔄 Alur Arsitektur Request (MVC Flow)
+
+```mermaid
+flowchart TD
+    User["1. Browser User (Akses URL /produk)"] --> Route["2. routes/web.php (Route::resource)"]
+    Route --> Controller["3. ProductWebController"]
+    Controller --> Model["4. Eloquent Model (Product & Category)"]
+    Model --> DB[(5. Database MySQL)]
+    DB --> Model
+    Model --> Controller
+    Controller --> BladeView["6. resources/views/products/index.blade.php"]
+    BladeView --> MasterLayout["7. resources/views/layouts/app.blade.php"]
+    MasterLayout --> Browser["8. Render HTML ke Layar User"]
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## 🛠️ Panduan Instalasi & Menjalankan Proyek
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### 1. Prasyarat Sistem
+* PHP >= 8.2
+* Composer
+* MySQL Server (Laragon / XAMPP)
 
-## Code of Conduct
+### 2. Langkah Instalasi
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+```bash
+# 1. Clone repository
+git clone https://github.com/username/repository-name.git
+cd repository-name
 
-## Security Vulnerabilities
+# 2. Install dependensi PHP
+composer install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+# 3. Salin environment file
+cp .env.example .env
 
-## License
+# 4. Generate Application Key
+php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+# 5. Konfigurasi database di file .env
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=belajar_laravel
+DB_USERNAME=root
+DB_PASSWORD=
+
+# 6. Jalankan migrasi dan seeder data
+php artisan migrate:fresh --seed
+
+# 7. Jalankan server lokal
+php artisan serve
+```
+
+Akses aplikasi di browser melalui:  
+👉 **`http://localhost:8000/produk`** (atau via domain Laragon: `http://bejalar-laravel.test/produk`)
+
+---
+
+## 🧪 Pengujian Otomatis (Testing)
+
+Project telah dilengkapi dengan pengujian Feature Test otomatis (`tests/Feature/ProductCrudTest.php`) yang menguji seluruh skenario CRUD, relasi database, pencarian, dan validasi:
+
+```bash
+php artisan test
+```
+
+**Hasil Uji Coba:**
+```text
+   PASS  Tests\Unit\ExampleTest
+  ✓ that true is true
+
+   PASS  Tests\Feature\ExampleTest
+  ✓ the application returns a successful response
+
+   PASS  Tests\Feature\ProductCrudTest
+  ✓ can display products index page
+  ✓ can search products by name
+  ✓ can display create product page
+  ✓ can store product with valid data
+  ✓ cannot store product with invalid data
+  ✓ can display edit product page
+  ✓ can update product
+  ✓ can delete product
+  ✓ relationship models
+
+  Tests:    11 passed (37 assertions)
+```
+
+---
+
+## 📁 Struktur Berkas Penting
+
+```text
+bejalar-laravel/
+├── app/
+│   ├── Http/
+│   │   ├── Controllers/
+│   │   │   ├── ProductWebController.php   # Controller web untuk CRUD Blade
+│   │   │   └── ProductsController.php     # Controller API
+│   │   └── Requests/
+│   │       └── ProductRequest.php         # Validasi Form Request (nama, harga, stok, kategori)
+│   └── Models/
+│       ├── Category.php                   # Model Kategori (hasMany Product)
+│       └── Product.php                    # Model Produk (belongsTo Category & SoftDeletes)
+├── database/
+│   ├── migrations/                        # Skema tabel products, categories, soft_deletes
+│   └── seeders/
+│       ├── CategorySeeder.php             # Seeder 5 kategori default
+│       └── ProductSeeder.php              # Seeder data produk dummy
+├── resources/
+│   └── views/
+│       ├── layouts/
+│       │   └── app.blade.php              # Master layout (Navbar, footer, @yield)
+│       ├── products/
+│       │   ├── index.blade.php            # Daftar produk, pencarian, tabel, & pagination
+│       │   ├── create.blade.php           # Form tambah produk
+│       │   └── edit.blade.php             # Form edit produk
+│       └── vendor/pagination/
+│           └── bootstrap-5.blade.php      # Custom pagination template Bootstrap 5
+├── routes/
+│   ├── web.php                            # Rute Resource web produk (/produk)
+│   └── api.php                            # Rute API RESTful
+└── tests/
+    └── Feature/
+        └── ProductCrudTest.php            # 11 Unit/Feature automated tests
+```
+
+---
+
+© 2026 **M. Niko Nur Cahyono** · Teknik Informatika · Pemrograman Berbasis Kerangka Kerja
